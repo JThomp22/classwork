@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AppetizersPage</title>
+	<link href="https://fonts.googleapis.com/css?family=Bitter|Fjalla+One|Inconsolata" rel="stylesheet">
+	<style>
+
+title{
+	font-family: 'Bitter', serif;
+	color: rgb(136, 232, 119);
+}
+
+body{
+	font-family: 'Inconsolata', monospace;
+	color: rgb(131, 255, 168);
+	background-color: rgb(37, 73, 255);
+}
+
+li a:hover{
+	background-color: rgb(215, 255, 131);
+	font-family: 'Fjalla One', sans-serif;
+	color: orange;
+}
+
+#pagewrap{
+	margin: 20px auto;
+	width: 980px;
+	padding: 5px;
+}
+
+header {
+		height: 100px;
+		padding 0 15px;
+		font-size: 3em;
+	}
+
+#OneToThirdImage{
+	float: left;
+	height: auto;
+	padding: 5px;
+	width: 45%;
+}
+
+#TheRestOfTheImages{
+	float: right;
+	padding: 5px;
+	height: auto;
+	width: 45%;
+}
+p{
+	color: green;
+}
+
+/*#TheLeftColumn{
+	float: left;
+}
+
+#TheRightColumn{
+	float: right;
+}*/
+
+/*************************************************
+********************************************
+MEDIA QUERIES
+********************************************
+**************************************************/
+
+/*For 980 px or less */
+
+@media screen and (max-width: 980px){
+	#OneToThirdImage{
+		float: left;
+		height: auto;
+		width: 45%;
+		margin: 0px 0px 5px 5px;
+	}
+	#TheRestOfTheImages{
+		float: right;
+		height: auto;
+		width: 45%;
+		margin: 0px 0px 5px 5px;
+	}
+
+	#pagewrap{
+		padding: 5px 5px 5px 5px;
+	}
+	#content1{
+		width: 35%;
+		padding: 1% 4%;
+	}
+	#content2{
+		width: 35%;
+		padding: 1% 4%;
+	}
+	#content3{
+		width: 35%;
+		padding: 1% 4%;
+	}
+}
+
+/* for 600px or less*/
+
+@media screen and (max-width: 600px){
+	#OneToThirdImage{
+		float: left;
+	}
+	#TheRestOfTheImages{
+		float: right;
+	}
+
+	#content1{
+		width: 35%;
+		padding:1% 3%;
+	}
+	#content2{
+		width: 35%;
+		padding: 1% 3%;
+	}
+
+	#content3{
+		width: 35%;
+		padding: 1% 3%;
+	}
+}
+
+/* for 470px or less */
+
+@media screen and (max-width: 470px){
+	#OneToThirdImage{
+		float: left;
+	}
+	#TheRestOfTheImages{
+		float: right;
+	}
+
+	#header{
+		font-size: 2.3em;
+		padding: 1% 2%;
+	}
+	#content1{
+		font-size: 1em;
+		padding: 1% 2%;
+	}
+	#content2{
+		font-size: 1em;
+		padding: 1% 2%;
+	}
+	#content3{
+		font-size: 1em;
+		padding: 1% 2%;
+	}
+
+
+}
+
+/* for 341px or less */
+
+@media screen and (max-width: 341px){
+	#OneToThirdImage{
+		float: left;
+	}
+	#TheRestOfTheImages{
+		float: right;
+	}
+
+	#header{
+		font-size: 2em;
+	}
+
+}
+
+/* for 281px or less */
+
+@media screen and (max-width: 281px){
+	#OneToThirdImage{
+		float: left;
+	}
+	#TheRestOfTheImages{
+		float: right;
+	}
+
+	#header{
+		font-size: 1.8em;
+	}
+	#content1{
+		font-size: .5em;
+		padding: 1% 1%;
+	}
+	#content2{
+		font-size: .5em;
+		padding: 1% 1%;
+	}
+	#content3{
+		font-size: .5em;
+		padding: 1% 1%;
+	}
+
+}
+/* End Media */
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<header>
+Appetizers:
+</header>
+
+
+<div id = "OneToThirdImage">
+<img src = "img/BeefBaconRollAppitizer.jpg" alt = "Image of Beef Bacon Roll Appetizer." width = 20% height = 20%>
+<h3>
+<p>$5.99</p><br>
+Try our delicious Beef Bacon Roll that bakes all day to bring out every ounce of flavor imaginable to make your meat experience here the best that you have ever had!
+</h3>
+<img src = "img/BeefEggrollAppitizer.jpg" alt = "Image of Beef Eggroll Appetizer." width = 20% height = 20%>
+<h3>
+<p>$7.99</p><br>
+The Beef Eggroll is a traditional powerhouse in taste and looks, we took it a step further and honey-roasted the Beef Bacon Roll so that it's crispy and soft at the same, wonderfully spicy-sweet feel.
+</h3>
+<img src = "img/MeatballAppitizer.jpg" alt = "Image of Meatball Appetizer." width = 20% height = 20%>
+<h3>
+<p>$2.99</p><br>
+Our Meatballs are one of our best types of food to make and delight our customers with it. It may only cook for 8 hours but every slow-cooked second makes it even better. Our restaurant takes pride in one of our best creations; avaliable with or without barbeque sauce.
+</h3>
+</div>
+
+<div id = "TheRestOfTheImages">
+<img src = "img/MeatBunsAppitizer.jpg" alt = "Image of Meat Buns Appetizer." width = 20% height = 20%>
+<h3>
+<p>$4.99</p><br>
+The Meat bun speaks for itself without words to explain the remarkable flavor.
+</h3>
+<img src = "img/MiniChickenStripAppitizer.jpg" alt = "Image of Mini Chicken Strip Appetizer." width = 20% height = 20%>
+<h3>
+<p>$5.99</p><br>
+Mini Chicken Strips. Mini Chicken Strips have always been a renouned visual for meat, we could not do without this unforgettable meat item!
+</h3>
+<img src = "img/MiniHotDogAppizer.jpg" alt = "Image of the Mini HotDog Appetizer." width = 20% height = 20%>
+<h3>
+<p>$6.99</p><br>
+Mini HotDogs; we have both quantity and quality here at the Meat Store! Our priority is to provide the best and the most meat that you can only dream of, and go here to get, awesome-delicious meat!
+</h3>
+</div>
+
+</body>
+</html>
