@@ -2,52 +2,74 @@
 <html>
 <head>
 	<title>Forest Adventure</title>
+	<link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
+	<style>
+	body{
+		margin-left: 500px;
+		margin-top: 250px;
+		margin-right: 50px;
+		margin-bottom: 250px;
+		background-color: grey;
+
+	}
+	p{
+		margin-left: 3px;
+		margin-top: 3px;
+		margin-right: 3px;
+		margin-bottom: 3px;
+	}
+	h1{
+		font-family: 'Revalia', cursive;
+	}
+	</style>
 </head>
 <body>
 <img src = "" width = "300px" height = "267px">
 <p id = "output" > </p>
-<input id = "input" type = "text" placeholder = "Enter your action...">
+<input id = "input" type = "text" placeholder = "Enter a direction to travel...">
 <button> Enter</button>
-
+<h1>Cool World Game</h1>
 <script>
+
+
 var map = [];
 
 
-map[0] = " An old stone keep";
-map[1] = " A deep well";
-map[2] = " A sunny glade";
-map[3] = " A sleeping dragon";
-map[4] = " A narrow pathway";
-map[5] = " An ancient gate";
-map[6] = " The edge of a river";
-map[7] = " A lonely wooden bench";
-map[8] = " An isolated cottage. Faint music comes from inside";
+map[0] = " Canada";
+map[1] = " Europe";
+map[2] = " Russia";
+map[3] = " America";
+map[4] = " Africa";
+map[5] = " China";
+map[6] = " Latin America";
+map[7] = " Antarctica";
+map[8] = " Japan";
 // 9 //
 
 var actionsIknow = ["north", "east", "south", "west", "take", "drop", "use"];
 
 
 var imgs = [];
-imgs[0] = "images/keep.png";
-imgs[1] = "images/well.png";
-imgs[2] = "images/glade.png";
-imgs[3] = "images/dragon.png";
-imgs[4] = "images/path.png";
-imgs[5] = "images/river.png";
-imgs[6] = "images/gate.png";
-imgs[7] = "images/bench.png";
-imgs[8] = "images/cottage.png";
+imgs[0] = "images/Canada.jpg";
+imgs[1] = "images/Europe.jpg";
+imgs[2] = "images/Russia.png";
+imgs[3] = "images/America.png";
+imgs[4] = "images/Africa.png";
+imgs[5] = "images/China.jpg";
+imgs[6] = "images/LatinAmerica.png";
+imgs[7] = "images/Antarctica.jpg";
+imgs[8] = "images/Japan.png";
 
 var blockedPathMessages = [];
 blockedPathMessages[0] = " It's way too dangerous to move that way! ";
 blockedPathMessages[1] = " A mysterious force holds you back! ";
-blockedPathMessages[2] = " A tangle of thorns block your way! ";
-blockedPathMessages[3] = " You can't step over a dragon! ";
+blockedPathMessages[2] = " The cold Russian winter holds you back! ";
+blockedPathMessages[3] = " You failed the naturalization process! ";
 blockedPathMessages[4] = " ";
-blockedPathMessages[5] = " The gate locks shut! ";
-blockedPathMessages[6] = " The river is too deep to cross! ";
-blockedPathMessages[7] = " The trees are too thick to pass! ";
-blockedPathMessages[8] = " You're way too scared to go that way! ";
+blockedPathMessages[5] = " The Great Wall of China holds you back! ";
+blockedPathMessages[6] = " The long-distance trip holds you back! ";
+blockedPathMessages[7] = " It is too cold there! ";
+blockedPathMessages[8] = " It's on the other side of the Earth, too far away! ";
 
 var items = ["flute", "stone", "sword"];
 var itemsLocation = [1, 6, 8];
@@ -81,6 +103,14 @@ render();
 function clickHandler(){
 	playGame();
 }
+input.addEventListener("keyup", function(event){
+	event.preventDefault();
+	if(event.keyCode === 13){
+		button.click()
+	}
+}
+);
+
 
 function playGame(){
 	playerInput = input.value;
@@ -89,7 +119,7 @@ console.log("Player Input" + playerInput)
 	gameMessage = " ";
 	action = " ";
 	for(i = 0; i < actionsIknow.length; i++){
-		if(playerInput.indexOf(actionsIknow[i]) !== -1){
+		if(playerInput.indexOf(actionsIknow[i] !== -1)){
 			action = playerInput;
 			console.log("player's action: " + action);
 			break;
@@ -143,7 +173,7 @@ console.log("Player Input" + playerInput)
 				dropItem()
 				break;
 		case "use":
-				//useItem()
+				useItem()
 				break;
 		//case "pickedUpItem":
 				//pickedUpItem()
@@ -200,7 +230,7 @@ function dropItem(){
 	if(backpack.length !== 0){
 		var backpackIndexNumber = backpack.indexOf(item);
 		if(backpackIndexNumber !== -1){
-				gameMessage = "You drop the " + item + ","
+				gameMessage = "You drop the " + item + "."
 			items.push(backpack[backpackIndexNumber]);
 			itemLocation.push(mapLocation);
 			backpack.splice(backpackIndexNumber);
@@ -212,6 +242,56 @@ function dropItem(){
 }
 else{gameMessage = "You cannot do that!";
 }
+}
+
+function useItem(){
+	var backpackIndexNumber = backpack.indexOf(item);
+	if(backpackIndexNumber === -1){
+		gameMessage = "You're not carrying it.";
+	}
+
+	if(backpack.length === 0){
+		gameMessage += "Your backpack is empty!";
+	}
+
+	if(backpackIndexNumber !== -1){
+		switch(item){
+			case "flute":
+				if(mapLocation === 1){
+					gameMessage = "Beautiful music fills the air.";
+					gameMessage += "A wise old man steps outside.";
+					gameMessage += " and hands you a sword";
+					items.push("sword");
+					itemsLocation.push(mapLocation);
+				}else{
+					gameMessage = "You and try and play the flute";
+					gameMessage += " but makes no sound here.";
+				}
+				break;
+
+			case "sword":
+				if(mapLocation === 3){
+					gameMessage = " You swing and slay the dragon!";
+					gameMessage += " You saved the Forest!";
+				}else{
+					gameMessage = "You swing the sword listlessly";
+				}
+				break;
+
+			case "stone":
+				if(mapLocation === 1){
+					gameMessage = " You drop the stone in the well.";
+					gameMessage += " A magical Flute appears.";
+					backpack.splice(backpackIndexNumber, 1);
+					items.push("flute");
+					itemsLocation.push(mapLocation);
+				}else{
+					gameMessage = " You fumble with the stone in your pocket.";
+				}
+				break;
+		}
+
+	}
 }
 
 </script>
